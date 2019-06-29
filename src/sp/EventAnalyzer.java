@@ -16,7 +16,7 @@ import org.apache.spark.streaming.api.java.JavaStreamingContext;
 /**
  * The EventAnalyzer is a sample event analysis application.
  *
- * Let us consider an a e-commerce site that sends information about what page a user is currently
+ * Let us consider an e-commerce site that sends information about what page a user is currently
  * viewing and whether the cart is empty or not.  The idea is to try and analyze customer behavior
  * as they are navigating through the site and make near-real-time suggestions that might drive
  * more sales, for example, if the customer has spent several minutes on a product and haven’t yet
