@@ -31,7 +31,7 @@ Send some sample events
 nc -l 3333
 ```
 
-and then type events (one per line), each event in the format
+and then type events one per line, each event in the format
 
 `timestamp, customer_id, product_url, isProductInCart` 
 where
