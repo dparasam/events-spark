@@ -1,0 +1,43 @@
+plugins {
+    id 'java'
+}
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+    maven {
+        url "https://plugins.gradle.org/m2/"
+    }
+}
+
+sourceSets {
+    spDemo {
+        java {
+            srcDirs = ["src/sp"]
+        }
+    }
+}
+
+configurations {
+    spDemoCompile
+}
+
+dependencies {
+    def spark = 'org.apache.spark:spark-core_2.11:2.4.3'
+    def sparkStreaming = 'org.apache.spark:spark-streaming_2.11:2.4.3'
+    def hadoopHdfs = 'org.apache.hadoop:hadoop-hdfs:2.7.3'
+    spDemoCompile spark, sparkStreaming, hadoopHdfs 
+}
+
+task spDemo(type: Jar) {
+    outputs.files "build/libs/spDemo.jar"
+    destinationDir file("build/libs")
+    archiveName = "spDemo.jar"
+    manifest {
+        attributes 'Main-Class': 'sp.EventAnalyzer'
+    }
+    from configurations.spDemoCompile.collect { zipTree(it) }
+    from sourceSets.spDemo.output
+}
