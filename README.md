@@ -33,12 +33,12 @@ nc -l 3333
 
 and then type events one per line, each event in the format
 
-`timestamp, customer_id, product_url, isProductInCart` 
+`timestamp, customer_id, product_url, is_product_in_cart` 
 where
  - timestamp: timestamp of event in epoch
  - customer_id: what customer this event is for
  - product_url: the relative URL of the product
- - isProductInCart: whether the customer has added the product into the cart
+ - is_product_in_cart: whether the customer has added the product into the cart
 
 such as
 
