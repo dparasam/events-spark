@@ -41,11 +41,11 @@ import org.apache.spark.streaming.api.java.JavaStreamingContext;
  * Once you get this program up and running, you could ingest events into it by running:
  *      nc -l 3333
  * and then typing in events in the format:
- *      timestamp, customer_id, product_url, isProductInCart; where
+ *      timestamp, customer_id, product_url, is_product_in_cart; where
  *      timestamp: timestamp of event in epoch
  *      customer_id: what customer this event is for
  *      product_url: the relative URL of the product
- *      isProductInCart: whether the customer has added the product into the cart
+ *      is_product_in_cart: whether the customer has added the product into the cart
  *
  * Sample events:
  *      1561323510, 1, /product/flower_pot_1,true
